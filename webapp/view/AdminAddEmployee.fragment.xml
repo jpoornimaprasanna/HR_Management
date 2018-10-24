@@ -1,0 +1,60 @@
+<!--<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="HrAndEmp.HR_Management.controller.AdminAddEmployee" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:layout="sap.ui.layout"
+	xmlns:forms="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="New Employee" showNavButton="true" navButtonPress="onClick">
+				<headerContent>
+					<Button id="logout" text="Logout" iconFirst="true" icon="sap-icon://log" tooltip="action" press="logOut"/>
+				</headerContent>
+				<content>
+					<Panel backgroundDesign="Solid" class="sapUiLargeMargin" width="100%">
+						<forms:SimpleForm editable="true" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+							maxContainerCols="2" layout="ResponsiveLayout">
+							<core:Title text="Create New Employee Credentials"></core:Title>
+							<Label text="Id"/>
+							<Input value="" width="50%" id="empId" type="Number" required="true" liveChange="checkValidation"/>
+							<Label text="Name"/>
+							<Input value="" width="50%" id="empName" required="true"/>
+							<Label text="Initial Password"/>
+							<VBox>
+								<Input value="" width="50%" id="empPassword" type="Password" required="true"/>
+								<ToolbarSpacer></ToolbarSpacer>
+								<HBox >
+									<Button text="Submit" press="AddEmployee" class="sapUiSmallMargin"/>
+									<Button text="Reset" press="reset" class="sapUiSmallMargin"/>
+								</HBox>
+								
+							</VBox>
+						</forms:SimpleForm>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>-->
+<core:FragmentDefinition xmlns:m="sap.m" xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:forms="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<m:Dialog id="AddEmployeeId" title="Add Employee">
+		<m:content>
+			<forms:SimpleForm editable="true" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+				maxContainerCols="2" layout="ResponsiveLayout">
+				<core:Title text="Create New Employee Credentials"></core:Title>
+				<m:Label text="Id"/>
+				<m:Input value="" width="50%" id="empId" type="Number" required="true" liveChange="checkValidation"/>
+				<m:Label text="Name"/>
+				<m:Input value="" width="50%" id="empName" required="true"/>
+				<m:Label text="Initial Password"/>
+				<m:VBox>
+					<m:Input value="" width="50%" id="empPassword" type="Password" required="true"/>
+				</m:VBox>
+			</forms:SimpleForm>
+		</m:content>
+		
+			<m:Button text="Submit" press="Submit" class="sapUiSmallMargin"/>
+			<m:Button text="Reset" press="reset" class="sapUiSmallMargin"/>
+			<m:beginButton>
+			<m:Button text="Close" press="onCloseDialog" class="sapUiSmallMargin"/>
+			</m:beginButton>
+	</m:Dialog>
+</core:FragmentDefinition>

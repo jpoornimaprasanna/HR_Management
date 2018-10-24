@@ -1,0 +1,128 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="HrAndEmp.HR_Management.controller.FirstEmpPage"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:layout="sap.ui.layout" xmlns:forms="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="Emp Registration Page">
+				<headerContent>
+					<Button id="logout" text="Logout" iconFirst="true" icon="sap-icon://log" tooltip="action" press="logOut"/>
+				</headerContent>
+				<content>
+					<layout:VerticalLayout
+				width="50%"
+				class="gridWrapper">
+			<layout:Grid containerQuery="true">
+					<forms:SimpleForm editable="true" id="basicDetails" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0"
+						emptySpanS="0" maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+						<core:Title text="Basic Details"></core:Title>
+						<Label text="name"/>
+						<Input required="true" value="" width="100%" id="name"/>
+						<Label text="Designation"/>
+						<Input required="true" value="" width="100%" id="designation"/>
+						<Label text="Image"/>
+						<Input required="true" value="" width="100%" id="image" type="Url"/>
+					</forms:SimpleForm>
+			</layout:Grid>
+		</layout:VerticalLayout>
+		<layout:VerticalLayout
+				width="50%"
+				class="gridWrapper">
+			<layout:Grid containerQuery="true">
+					<forms:SimpleForm editable="true" id="goals" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+						maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+						<core:Title text="Goals"></core:Title>
+						<Label text="Goal 1"/>
+						<Input required="true" value="" width="100%" id="goal1"/>
+						<Label text="Goal 2"/>
+						<Input required="true" value="" width="100%" id="goal2"/>
+					</forms:SimpleForm>
+					</layout:Grid>
+		</layout:VerticalLayout>
+					<layout:VerticalLayout
+				width="50%"
+				class="gridWrapper">
+			<layout:Grid containerQuery="true">
+					<forms:SimpleForm editable="true" id="phonenoId" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+						maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+						<core:Title text="Phone Numbers"></core:Title>
+						<Label text="Home"/>
+						<Input required="true" value="" width="100%" id="home" liveChange="phoneValidation" type="Number"/>
+						<Label text="Office phone"/>
+						<Input required="true" value="" width="100%" id="office" liveChange="phoneValidation" type="Number"/>
+					</forms:SimpleForm>
+					</layout:Grid>
+		</layout:VerticalLayout>
+					<layout:VerticalLayout
+				width="50%"
+				class="gridWrapper">
+			<layout:Grid containerQuery="true">
+					<forms:SimpleForm editable="true" id="addressId" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+						maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+						<core:Title text="Adresses"></core:Title>
+						<Label text="Home Address"/>
+						<layout:VerticalLayout>
+							<Input required="true" value="" width="100%" id="aline1"/>
+							<Input required="true" value="" width="100%" id="aline2"/>
+							<Input required="true" value="" width="100%" id="aline3"/>
+						</layout:VerticalLayout>
+						<Label text="Mailing Address"/>
+						<layout:VerticalLayout>
+							<Input required="true" value="" width="100%" id="mline1"/>
+							<Input required="true" value="" width="100%" id="mline2"/>
+							<Input required="true" value="" width="100%" id="mline3"/>
+						</layout:VerticalLayout>
+					</forms:SimpleForm>
+					</layout:Grid>
+		</layout:VerticalLayout>
+					<layout:VerticalLayout
+				width="50%"
+				class="gridWrapper">
+			<layout:Grid containerQuery="true">
+					<forms:SimpleForm id="mailingId" editable="true" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+						maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+						<core:Title text="Mailing Address"/>
+						<Label text="Work"/>
+						<Input required="true" value="" width="100%" id="email"/>
+					</forms:SimpleForm>
+					</layout:Grid>
+		</layout:VerticalLayout>
+					<layout:VerticalLayout
+				width="50%"
+				class="gridWrapper">
+			<layout:Grid containerQuery="true">
+					<forms:SimpleForm editable="true" id="ipaymentId" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+						maxContainerCols="2" layout="ResponsiveLayout">
+						<core:Title text="Bank Transfer"/>
+						<!--<Label text=""/>-->
+						<Label text="Place"/>
+						<Input required="true" value="" width="100%" id="place"/>
+						<Label text="Account Number"/>
+						<Input required="true" value="" width="100%" type="Number" id="account"/>
+					</forms:SimpleForm>
+					</layout:Grid>
+		</layout:VerticalLayout>
+					<layout:VerticalLayout
+				width="50%"
+				class="gridWrapper">
+			<layout:Grid containerQuery="true">
+					<forms:SimpleForm id="passwordChangeid" editable="true" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0"
+						emptySpanS="0" maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+						<core:Title text="Change Password"/>
+						<Label text="Password"/>
+						<VBox>
+							<Input required="true" value="" width="100%" id="password" type="Password"/>
+							
+						</VBox>
+					</forms:SimpleForm>
+					</layout:Grid>
+		</layout:VerticalLayout>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button text="Submit" press="onSubmit" class="sapUiSmallMargin"/>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

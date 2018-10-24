@@ -1,0 +1,149 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m"
+	controllerName="HrAndEmp.HR_Management.controller.EmployeeData" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form"
+	xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:forms="sap.ui.layout.form">
+	<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="true">
+		<headerTitle>
+			<ObjectPageHeader objectImageURI="{image}" objectTitle="{name}" objectImageShape="Circle" objectImageAlt="{name}"
+				isObjectIconAlwaysVisible="true" objectSubtitle="{designation}">
+				<actions>
+					<ObjectPageHeaderActionButton id="edit" text="Public Profile" iconFirst="true" icon="sap-icon://edit" tooltip="edit" press="handleEditPress"/>
+					<ObjectPageHeaderActionButton id="save" visible="false" icon="sap-icon://save" tooltip="save" press="onSavePress"/>
+					<ObjectPageHeaderActionButton id="cancel" visible="false" icon="sap-icon://cancel" press="onCancelPress" tooltip="cancle"/>
+					<ObjectPageHeaderActionButton id="show-edit" text="Take Action" iconFirst="true" icon="sap-icon://show-edit" press="handlePress"
+						tooltip="action"/>
+					<ObjectPageHeaderActionButton id="logout" text="Take Action" iconFirst="true" icon="sap-icon://log" tooltip="action" press="logOut"/>
+				</actions>
+			</ObjectPageHeader>
+		</headerTitle>
+		<headerContent>
+			<layout:VerticalLayout>
+				<m:Link text="{name}"/>
+				<m:Label text="{phoneno}"/>
+				<m:Link text="{email}"/>
+				<layout:HorizontalLayout>
+					<m:Image height="24px" width="24px" src="./test-resources/sap/uxap/images/twitterIcon.png"/>
+					<m:Image height="24px" width="24px" src="./test-resources/sap/uxap/images/linkedInIcon.png"/>
+				</layout:HorizontalLayout>
+			</layout:VerticalLayout>
+			<m:Text width="200px" text="Hi, I'm {name}. I am passionate about what I do and I'll go the extra mile to make the customer win."/>
+			<layout:VerticalLayout>
+				<m:Label text="Profile completion"/>
+				<m:ProgressIndicator percentValue="30" displayValue="30%" showValue="true" state="None"/>
+			</layout:VerticalLayout>
+		</headerContent>
+		<sections>
+			<ObjectPageSection title="2019 Goals Plan">
+				<subSections>
+					<ObjectPageSubSection title=" ">
+						<blocks>
+							<m:VBox>
+								<m:Title text="{goal1}"/>
+								<m:Title text="{goal2}"/>
+							</m:VBox>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection title="Personal">
+				<subSections>
+					<ObjectPageSubSection title="Connect">
+						<blocks>
+							<m:VBox>
+								<m:Panel backgroundDesign="Solid" width="100%" class="sapUiLargeMargin">
+									<forms:SimpleForm id="lphonenumberId" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+										maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+										<core:Title text="Phone Numbers"></core:Title>
+										<m:Label text="Home"/>
+										<m:Text text="{phoneno}"/>
+										<m:Label text="Office phone"/>
+										<m:Text text="{officeno}"/>
+									</forms:SimpleForm>
+									<forms:SimpleForm editable="true" visible="false" id="iphonenumberId" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0"
+										emptySpanM="0" emptySpanS="0" maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+										<core:Title text="Phone Numbers"></core:Title>
+										<m:Label text="Home"/>
+										<m:Input id="hphoneId" required="true" liveChange="validatePhone" value="{phoneno}" width="50%"/>
+										<m:Label text="Office phone"/>
+										<m:Input id="oPhoneId" required="true" liveChange="validatePhone" value="{officeno}" width="50%"/>
+									</forms:SimpleForm>
+								</m:Panel>
+								<m:Panel backgroundDesign="Solid" width="100%" class="sapUiLargeMargin">
+									<forms:SimpleForm id="laddressId" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+										maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+										<core:Title text="Adresses"></core:Title>
+										<m:Label text="Home Address"/>
+										<layout:VerticalLayout>
+											<m:Text text="{line1}"/>
+											<m:Text text="{line2}"/>
+											<m:Text text="{line3}"/>
+										</layout:VerticalLayout>
+										<m:Label text="Mailing Address"/>
+										<layout:VerticalLayout>
+											<m:Text text="{mline1}"/>
+											<m:Text text="{mline2}"/>
+											<m:Text text="{mline3}"/>
+										</layout:VerticalLayout>
+									</forms:SimpleForm>
+									<forms:SimpleForm editable="true" id="iaddressId" visible="false" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0"
+										emptySpanS="0" maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+										<core:Title text="Adresses"></core:Title>
+										<m:Label text="Home Address"/>
+										<layout:VerticalLayout>
+											<m:Input required="true" value="{line1}" width="50%"/>
+											<m:Input required="true" value="{line2}" width="50%"/>
+											<m:Input required="true" value="{line3}" width="50%"/>
+										</layout:VerticalLayout>
+										<m:Label text="Mailing Address"/>
+										<layout:VerticalLayout>
+											<m:Input required="true" value="{mline1}" width="50%"/>
+											<m:Input required="true" value="{mline2}" width="50%"/>
+											<m:Input required="true" value="{mline3}" width="50%"/>
+										</layout:VerticalLayout>
+									</forms:SimpleForm>
+								</m:Panel>
+								<m:Panel backgroundDesign="Solid" width="100%" class="sapUiLargeMargin">
+									<forms:SimpleForm id="lmailingId" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+										maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+										<core:Title text="Mailing Address"/>
+										<m:Label text="Work"/>
+										<m:Text text="{email}"/>
+									</forms:SimpleForm>
+									<forms:SimpleForm id="imailingId" editable="true" visible="false" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0"
+										emptySpanS="0" maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+										<core:Title text="Mailing Address"/>
+										<m:Label text="Work"/>
+										<m:Input required="true" value="{email}" width="50%"/>
+									</forms:SimpleForm>
+								</m:Panel>
+							</m:VBox>
+						</blocks>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection id="paymentSubSection" title="Payment information">
+						<blocks>
+							<m:Panel backgroundDesign="Solid" width="100%" class="sapUiLargeMargin">
+								<forms:SimpleForm id="lpaymentId" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+									maxContainerCols="2" layout="ResponsiveLayout">
+									<core:Title text="Main Payment Method"/>
+									<m:Label text="Bank Transfer"/>
+									<layout:VerticalLayout>
+										<m:Text text="{payment_place}"/>
+										<m:Text text="Account {account}"/>
+									</layout:VerticalLayout>
+								</forms:SimpleForm>
+								<forms:SimpleForm id="ipaymentId" visible="false" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+									maxContainerCols="2" layout="ResponsiveLayout">
+									<core:Title text="Main Payment Method"/>
+									<m:Label text="Bank Transfer"/>
+									<layout:VerticalLayout>
+										<m:Input required="true" value="{payment_place}" width="50%"/>
+										<m:Input required="true" value="Account {account}" width="50%"/>
+									</layout:VerticalLayout>
+								</forms:SimpleForm>
+							</m:Panel>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+</mvc:View>

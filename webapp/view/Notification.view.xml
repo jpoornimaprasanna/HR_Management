@@ -1,0 +1,75 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="HrAndEmp.HR_Management.controller.Notification"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<SplitContainer>
+				<masterPages>
+					<Page title="Notifications" showNavButton="true" navButtonPress="onClick">
+						<content>
+							<List id="list1" items="{path: 'empDetails>/editedData'}" itemPress="item">
+								<items>
+									<ObjectListItem title="{empDetails>phoneno}" number="{empDetails>payment_place}" type="Active"></ObjectListItem>
+								</items>
+							</List>
+						</content>
+						<footer>
+							<Toolbar></Toolbar>
+						</footer>
+					</Page>
+				</masterPages>
+				<detailPages>
+					<Page title="Notification Details">
+						<headerContent>
+							<Button id="logout" text="Logout" iconFirst="true" icon="sap-icon://log" tooltip="action" press="logOut"/>
+						</headerContent>
+						<content>
+							<f:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+								adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+								singleContainerFullSize="false">
+								<f:content>
+									<Label text="Home Number"/>
+									<Text text="{empDetails>/oForm/phoneno}"/>
+									
+									<Label text="Office Number"/>
+									<Text text="{empDetails>/oForm/officeno}"/>
+									
+									<Label text="Goal 1"/>
+									<Text text="{empDetails>/oForm/goal1}"/>
+									
+									<Label text="Goal 2"/>
+									<Text text="{empDetails>/oForm/goal2}"/>
+									
+									<Label text="Address"/>
+									<Text text="{empDetails>/oForm/line1}"/><Label/>
+									<Text text="{empDetails>/oForm/line2}"/><Label/>
+									<Text text="{empDetails>/oForm/line3}"/>
+									
+									<Label text="Mailing Address"/>
+									<Text text="{empDetails>/oForm/mline1}"/><Label/>
+									<Text text="{empDetails>/oForm/mline2}"/><Label/>
+									<Text text="{empDetails>/oForm/mline3}"/>
+									
+									<Label text="Email Address"/>
+									<Text text="{empDetails>/oForm/email}"/>
+									
+									<Label text="Payment Place Address"/>
+									<Text text="{empDetails>/oForm/payment_place}"/>
+									
+									<Label text="Account number"/>
+									<Text text="{empDetails>/oForm/account}"/>
+								</f:content>
+							</f:SimpleForm>
+						</content>
+						<footer>
+							<Toolbar>
+								<ToolbarSpacer></ToolbarSpacer>
+								<Button text="Accept" press="acceptRequest" id="accept" type="Accept"/>
+								<Button text="Reject" press="rejectRequest" id="reject" type="Reject"/>
+							</Toolbar>
+						</footer>
+					</Page>
+				</detailPages>
+			</SplitContainer>
+		</pages>
+	</App>
+</mvc:View>

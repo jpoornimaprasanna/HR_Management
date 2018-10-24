@@ -1,0 +1,32 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="HrAndEmp.HR_Management.controller.AdminPage"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Admin Page">
+				<headerContent>
+					<Button text="Logout" icon="sap-icon://log" press="logOut"/>
+					<!--	<Image src="" />-->
+				</headerContent>
+				<subHeader>
+					<Toolbar>
+						<SearchField liveChange="onSearch" placeholder="Enter Employee name or id"/>
+					</Toolbar>
+				</subHeader>
+				<content>
+					<List items="{path:'empDetails>/details'}" itemPress="onPressItem" id="list1">
+						<items type="active">
+							<ObjectListItem icon="{empDetails>image}" title="{empDetails>name}" type="Active" number="Id: {empDetails>id}"></ObjectListItem>
+						</items>
+					</List>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://add" text="Add" type="Accept" press="addEmployee"/>
+						<Button icon="sap-icon://notification" text="Notification" press="notifications"/>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

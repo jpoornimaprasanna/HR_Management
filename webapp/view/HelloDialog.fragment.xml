@@ -1,0 +1,57 @@
+<core:FragmentDefinition xmlns:m="sap.m" xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:forms="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<m:Dialog id="helloDialog" title="Edit The Data You Want">
+		<m:content>
+			<forms:SimpleForm editable="true" id="iphonenumberId" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0"
+				emptySpanS="0" maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+				<core:Title text="Phone Numbers"></core:Title>
+				<m:Label text="Home"/>
+				<m:Input required="true" value="{phoneno}" liveChange="phoneValidation" type="Number" width="100%" id="fphoneno"/>
+				<m:Label text="Office phone"/>
+				<m:Input required="true" value="{officeno}" liveChange="phoneValidation" type="Number" width="100%" id="fofficeno"/>
+			</forms:SimpleForm>
+			<forms:SimpleForm editable="true" id="goals" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+				maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+				<core:Title text="Basic Details"></core:Title>
+				<m:Label text="Goal 1"/>
+				<m:Input required="true" value="{goal1}" width="100%" id="fgoal1" />
+				<m:Label text="Goal 2"/>
+				<m:Input required="true" value="{goal2}" width="100%" id="fgoal2"/>
+			</forms:SimpleForm>
+			<forms:SimpleForm editable="true" id="iaddressId" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+				maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+				<core:Title text="Adresses"></core:Title>
+				<m:Label text="Home Address"/>
+				<layout:VerticalLayout>
+					<m:Input required="true" value="{line1}" width="100%" id="fline1"/>
+					<m:Input required="true" value="{line2}" width="100%" id="fline2"/>
+					<m:Input required="true" value="{line3}" width="100%" id="fline3"/>
+				</layout:VerticalLayout>
+				<m:Label text="Mailing Address"/>
+				<layout:VerticalLayout>
+					<m:Input required="true" value="{mline1}" width="100%" id="fmline1"/>
+					<m:Input required="true" value="{mline2}" width="100%" id="fmline2"/>
+					<m:Input required="true" value="{mline3}" width="100%" id="fmline3"/>
+				</layout:VerticalLayout>
+			</forms:SimpleForm>
+			<forms:SimpleForm id="imailingId" editable="true" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+				maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+				<core:Title text="Mailing Address"/>
+				<m:Label text="Work"/>
+				<m:Input required="true" value="{email}" width="100%" id="femail"/>
+			</forms:SimpleForm>
+			<forms:SimpleForm id="ipaymentId" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+				maxContainerCols="2" layout="ResponsiveLayout">
+				<core:Title text="Main Payment Method"/>
+				<m:Label text="Bank Transfer"/>
+				<layout:VerticalLayout>
+					<m:Input required="true" value="{payment_place}" width="100%" id="fpayment_place"/>
+					<m:Input required="true" value="Account {account}" type="Number" width="100%" id="faccount"/>
+				</layout:VerticalLayout>
+			</forms:SimpleForm>
+		</m:content>
+		<m:beginButton>
+			<m:Button text="{i18n>dialogCloseButtonText}" press="onCloseDialog" id="fRequest"/>
+		</m:beginButton>
+	</m:Dialog>
+</core:FragmentDefinition>
